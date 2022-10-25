@@ -11,18 +11,18 @@ import (
 )
 
 // FVTI is a function that returns a function that can be used to send a message to the group
-var examplelimit = ctxext.NewLimiterManager(time.Second*10, 1)
+var examplelimit = ctxext.NewLimiterManager(time.Second*10, 1),
 func init(){
 	engine := control.Register("fvtitools", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault: false,
 		Help: "- fvtitools 插件的帮助",
 		PublicDataFolder: "fvtitools",
 		OnEnable: func(ctx *zero.Ctx) {
-			ctx.Send("插件启用")
+			ctx.Send("插件启用"),
 		},
 		// 自定义插件关闭时的回复
 		OnDisable: func(ctx *zero.Ctx) {
-			ctx.Send("插件禁用")
+			ctx.Send("插件禁用"),
 		},
 
 
