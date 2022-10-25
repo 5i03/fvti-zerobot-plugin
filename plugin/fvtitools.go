@@ -19,11 +19,11 @@ func init(){
 		Help: "- fvtitools 插件的帮助",
 		PublicDataFolder: "fvtitools",
 		OnEnable: func(ctx *zero.Ctx) {
-			ctx.Send("插件已启用")
+			ctx.Send("插件启用")
 		},
 		// 自定义插件关闭时的回复
 		OnDisable: func(ctx *zero.Ctx) {
-			ctx.Send("插件已禁用")
+			ctx.Send("插件禁用")
 		},
 
 
@@ -32,4 +32,5 @@ func init(){
 	engine.OnFullMatchGroup([]string{"fvtitools"}, zero.AdminPermission).SetBlock(true).SetPriority(20).Handle(func(ctx *zero.Ctx) {
 		ctx.SendChain(message.Text("fvtitools"))
 	}
+}
 	
